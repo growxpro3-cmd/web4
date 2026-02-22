@@ -69,35 +69,35 @@ const ConnectWithUs = () => {
         </p>
 
         <div className="flex justify-center gap-8">
-          {socialLinks.map((link, i) => (
-            <a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              ref={el => iconsRef.current[i] = el}
-              className="group relative w-20 h-20 rounded-full flex items-center justify-center cursor-pointer"
-              style={{
-                background: link.color + '20',
-                border: `2px solid ${link.color}40`,
-                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'scale(1.15) rotate(360deg)';
-                e.currentTarget.style.boxShadow = `0 0 40px ${link.color}40`;
-                e.currentTarget.style.borderColor = link.color;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'scale(1) rotate(0deg)';
-                e.currentTarget.style.boxShadow = 'none';
-                e.currentTarget.style.borderColor = link.color + '40';
-              }}
-              title={link.name}
-            >
-              <div style={{ color: link.color }}>{link.icon}</div>
-            </a>
-          ))}
-        </div>
+  {socialLinks.map((link, i) => (
+    <a
+      key={link.name}
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      ref={el => iconsRef.current[i] = el}
+      className="group relative w-20 h-20 rounded-full flex items-center justify-center cursor-pointer"
+      style={{
+        background: link.color + '20',
+        border: `2px solid ${link.color}40`,
+        transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'scale(1.15) rotate(360deg)';
+        e.currentTarget.style.boxShadow = `0 0 40px ${link.color}40`;
+        e.currentTarget.style.borderColor = link.color;
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'scale(1) rotate(0deg)';
+        e.currentTarget.style.boxShadow = 'none';
+        e.currentTarget.style.borderColor = link.color + '40';
+      }}
+      title={link.name}
+    >
+      <div style={{ color: link.color }}>{link.icon}</div>
+    </a>
+  ))}
+</div>
       </div>
     </section>
   );
