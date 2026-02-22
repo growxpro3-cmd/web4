@@ -208,25 +208,31 @@ const PackageDetail = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="space-y-3">
-                <button
-                  className="w-full py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 text-white transition-all duration-300 hover:shadow-lg"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${pkg.color}, ${pkg.color}99)`,
-                    boxShadow: `0 0 30px ${pkg.color}30`
-                  }}
-                >
-                  <Phone size={16} />
-                  CALL US NOW
-                </button>
-                <button
-                  className="w-full py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 text-white transition-all duration-300"
-                  style={{ border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.05)' }}
-                >
-                  <MessageCircle size={16} />
-                  Message on WhatsApp
-                </button>
-              </div>
+             {/* CTA Buttons */}
+<div className="space-y-3">
+  <a
+    href="tel:+919286056937"
+    className="w-full py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 text-white transition-all duration-300 hover:shadow-lg"
+    style={{ 
+      background: `linear-gradient(135deg, ${pkg.color}, ${pkg.color}99)`,
+      boxShadow: `0 0 30px ${pkg.color}30`
+    }}
+  >
+    <Phone size={16} />
+    CALL US NOW
+  </a>
+
+  <a
+    href="https://wa.me/919286056937"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-full py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 text-white transition-all duration-300"
+    style={{ border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.05)' }}
+  >
+    <MessageCircle size={16} />
+    Message on WhatsApp
+  </a>
+</div>
             </div>
           </div>
         </div>
