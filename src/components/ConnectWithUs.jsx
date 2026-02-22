@@ -72,7 +72,9 @@ const ConnectWithUs = () => {
           {socialLinks.map((link, i) => (
             <a
               key={link.name}
-              href="#"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
               ref={el => iconsRef.current[i] = el}
               className="group relative w-20 h-20 rounded-full flex items-center justify-center cursor-pointer"
               style={{
