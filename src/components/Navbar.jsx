@@ -26,6 +26,14 @@ const Navbar = () => {
 
   const showBg = isScrolled || isMobile || mobileMenuOpen;
 
+  // ✅ FIXED LINKS WITH CORRECT SECTION IDs
+  const navLinks = [
+    { label: 'Home', id: 'hero' },
+    { label: 'Markets', id: 'markets' },
+    { label: 'Packages', id: 'packages' },
+    { label: 'About', id: 'about' },
+  ];
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -39,14 +47,26 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
+
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollTo('hero')}>
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold"
-              style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}>
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => scrollTo('hero')}
+          >
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold"
+              style={{ background: 'linear-gradient(135deg, #7c3aed, #06b6d4)' }}
+            >
               <span className="text-white">G</span>
             </div>
             <span className="text-xl font-bold">
-              <span style={{ background: 'linear-gradient(135deg, #a855f7, #06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span
+                style={{
+                  background: 'linear-gradient(135deg, #a855f7, #06b6d4)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
                 GroowX
               </span>
               <span className="text-white">Pro</span>
@@ -55,13 +75,13 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {['Home', 'Markets', 'Packages', 'About'].map((item) => (
+            {navLinks.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollTo(item.toLowerCase())}
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
                 className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium tracking-wide"
               >
-                {item}
+                {item.label}
               </button>
             ))}
           </div>
@@ -89,13 +109,13 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
-            {['Home', 'Markets', 'Packages', 'About'].map((item) => (
+            {navLinks.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollTo(item.toLowerCase())}
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
                 className="block w-full text-left py-3 text-gray-300 hover:text-white transition-colors"
               >
-                {item}
+                {item.label}
               </button>
             ))}
             <button
