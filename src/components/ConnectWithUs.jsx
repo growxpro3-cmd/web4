@@ -51,15 +51,14 @@ const ConnectWithUs = () => {
       url: 'https://t.me/groowxpro',
       icon: (
         <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0z"/>
+          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
         </svg>
       )
     }
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 px-4"
-      style={{ background: '#0a0a1a' }}>
+    <section ref={sectionRef} className="relative py-20 px-4" style={{ background: '#0a0a1a' }}>
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           Connect <span style={{ color: '#a855f7' }}>With Us</span>
@@ -69,38 +68,39 @@ const ConnectWithUs = () => {
         </p>
 
         <div className="flex justify-center gap-8">
-  {socialLinks.map((link, i) => (
-    <a
-      key={link.name}
-      href={link.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      ref={el => iconsRef.current[i] = el}
-      className="group relative w-20 h-20 rounded-full flex items-center justify-center cursor-pointer"
-      style={{
-        background: link.color + '20',
-        border: `2px solid ${link.color}40`,
-        transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.transform = 'scale(1.15) rotate(360deg)';
-        e.currentTarget.style.boxShadow = `0 0 40px ${link.color}40`;
-        e.currentTarget.style.borderColor = link.color;
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.transform = 'scale(1) rotate(0deg)';
-        e.currentTarget.style.boxShadow = 'none';
-        e.currentTarget.style.borderColor = link.color + '40';
-      }}
-      title={link.name}
-    >
-      <div style={{ color: link.color }}>{link.icon}</div>
-    </a>
-  ))}
-</div>
+          {socialLinks.map((link, i) => (
+            <a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              ref={el => iconsRef.current[i] = el}
+              className="group relative w-20 h-20 rounded-full flex items-center justify-center cursor-pointer"
+              style={{
+                background: link.color + '20',
+                border: `2px solid ${link.color}40`,
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'scale(1.15) rotate(360deg)';
+                e.currentTarget.style.boxShadow = `0 0 40px ${link.color}40`;
+                e.currentTarget.style.borderColor = link.color;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'scale(1) rotate(0deg)';
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = link.color + '40';
+              }}
+              title={link.name}
+            >
+              <div style={{ color: link.color }}>{link.icon}</div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
 export default ConnectWithUs;
+
