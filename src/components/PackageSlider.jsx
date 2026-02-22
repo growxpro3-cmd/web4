@@ -219,16 +219,17 @@ const PackageSlider = () => {
 
                     {/* CTA Buttons */}
                     <div className="space-y-2 sm:space-y-3">
-                      <button
-                        className="w-full py-2.5 sm:py-3 rounded-full font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg text-white text-sm"
-                        style={{ 
-                          background: `linear-gradient(135deg, ${pkg.color}, ${pkg.color}99)`,
-                          boxShadow: `0 0 20px ${pkg.color}30`
-                        }}
-                      >
-                        <Phone size={15} />
-                        CALL US
-                      </button>
+                     <a
+                  href="tel:+919286056937"
+                  className="w-full py-2.5 sm:py-3 rounded-full font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg text-white text-sm"
+                   style={{ 
+                   background: `linear-gradient(135deg, ${pkg.color}, ${pkg.color}99)`,
+                    boxShadow: `0 0 20px ${pkg.color}30`
+                   }}
+                    >
+                  <Phone size={15} />
+                  CALL US
+                  </a>
                       <button
                         onClick={() => navigate(`/package/${pkg.slug}`)}
                         className="w-full py-2.5 sm:py-3 rounded-full font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:bg-white/10 text-white text-sm"
